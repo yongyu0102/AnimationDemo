@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?><!--set 标签对应着 AnimatorSet-->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:ordering="together">
+    <!--对应着 ObjectAnimator-->
+    <objectAnimator
+        android:propertyName="x"
+        android:repeatCount="infinite"
+        android:repeatMode="reverse"
+        android:startOffset="10"
+        android:valueTo="300"
+        android:valueType="floatType" />
+    <!--其中propertyName 属性设置为translationX ，valueType 设置为floatType 可以正常启动
+       如果 valueType 设置为 intType 将报错,并且android:propertyName="translationX" 表示移动 300 ，而  android:propertyName="x"
+        表示移动到300 ，是两个不同属性-->
+    <!--startOffset 指定延迟多久开始播放动画-->
+    <!--valueType 表示指定的 android:propertyName 所指定属性的类型，intType 表示指定属性是整型的，
+     如果指定属性为颜色，那么不需要指定 valueType 属性，系统会自动处理
+     repeatCount 表示动画循环次数，默认值为0，-1 表示无限循环-->
+    <objectAnimator
+        android:propertyName="y"
+        android:repeatCount="infinite"
+        android:repeatMode="reverse"
+        android:startOffset="10"
+        android:valueTo="300"
+        android:valueType="floatType" />
+    <!--对应着 ValueAnimator-->
+    <!--<animator-->
+    <!--android:propertyName="rotation"-->
+    <!--android:duration="300"-->
+    <!--android:valueFrom="0"-->
+    <!--android:valueTo="360"-->
+    <!--android:startOffset="10"-->
+    <!--android:repeatCount="infinite"-->
+    <!--android:repeatMode="reverse"-->
+    <!--android:valueType="intType"/>-->
+</set>

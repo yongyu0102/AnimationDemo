@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <alpha
+        android:duration="3000"
+        android:fromAlpha="0.0"
+        android:toAlpha="1.0" />
+    <rotate
+        android:fillAfter="true"
+        android:duration="2000"
+        android:fromDegrees="0"
+        android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:startOffset="3000"
+        android:toDegrees="180" />
+    <!--通过设置第一个alpha动画播放3s后启动rotate动画实现组合动画，如果不设置startOffset则同时播放
+    pivotX:表示选择时候的相对坐标点
+    -->
+    <translate
+        android:fromXDelta="500"
+        android:toXDelta="0" />
+    <scale
+        android:duration="1000"
+        android:fromXScale="0.0"
+        android:fromYScale="0.0"
+        android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+        android:pivotX="50"
+        android:pivotY="50"
+        android:toXScale="2"
+        android:toYScale="2" />
+
+</set>
