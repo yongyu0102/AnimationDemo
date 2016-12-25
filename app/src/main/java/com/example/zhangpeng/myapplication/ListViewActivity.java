@@ -17,9 +17,10 @@ import java.util.List;
 public class ListViewActivity extends AppCompatActivity {
     private static final String TAG = "ListViewActivity";
     private ListView lvContetn;
-    private   FloatingActionButton fab;
+    private FloatingActionButton fab;
     private Toolbar toolbar;
-    private  List<String> stringList;
+    private List<String> stringList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,23 +40,24 @@ public class ListViewActivity extends AppCompatActivity {
     /**
      * 初始化view
      */
-    public void initView(){
+    public void initView() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        fab= (FloatingActionButton) findViewById(R.id.fab);
-        lvContetn= (ListView) findViewById(R.id.lv_content);
-        stringList=new ArrayList<>();
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        lvContetn = (ListView) findViewById(R.id.lv_content);
+        stringList = new ArrayList<>();
     }
+
     /**
      * 向listView内添加内容
      */
-    public void addContent(){
-        for(int i=0;i<20;i++){
-            stringList.add("你好"+i);
+    public void addContent() {
+        for (int i = 0; i < 20; i++) {
+            stringList.add("你好" + i);
         }
-        ArrayAdapter<String> adapter=new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,stringList);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, stringList);
         lvContetn.setAdapter(adapter);
         //用于控制子view动画效果
-        LayoutAnimationController layoutAnimationController= new LayoutAnimationController(AnimationUtils.loadAnimation(this,R.anim.zoom_in));
+        LayoutAnimationController layoutAnimationController = new LayoutAnimationController(AnimationUtils.loadAnimation(this, R.anim.zoom_in));
         layoutAnimationController.setOrder(LayoutAnimationController.ORDER_NORMAL);
         lvContetn.setLayoutAnimation(layoutAnimationController);
         lvContetn.startLayoutAnimation();

@@ -6,7 +6,6 @@ import android.animation.ArgbEvaluator;
 import android.animation.IntEvaluator;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
-import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -14,7 +13,6 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.animation.AnimationSet;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -136,9 +134,8 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
     }
 
 
-
-
     private IntEvaluator intEvaluator = new IntEvaluator();
+
     private void performAnimatorByValue(final View targetView, final int start, final int end) {
         ValueAnimator valueAnimator = ValueAnimator.ofInt(1, 100);
 
@@ -154,7 +151,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
                 targetView.requestLayout();
             }
         });
-        valueAnimator.setDuration(5000)
+        valueAnimator.setDuration(500)
                 .start();
     }
 
